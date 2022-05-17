@@ -2,6 +2,7 @@ package ix.ibm.waddemo.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -10,6 +11,7 @@ import java.util.Set;
 @Entity
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@EqualsAndHashCode(exclude = "courses")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +21,7 @@ public class Student {
     private int level;
 
     @ManyToMany(mappedBy = "professors")
+    @JsonIgnoreProperties("students")
     private Set<Course> courses = new HashSet<>();
 
 }
