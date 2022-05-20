@@ -1,0 +1,24 @@
+type Course {
+    id: ID!
+    title: String!
+    description: String
+}
+
+type Professor {
+    id: ID!
+    name: String!
+}
+
+type Student {
+    id: ID!
+    name: String!
+    level: Int
+}
+
+schema {
+    query: Query
+}
+
+type Query {
+    allCourses: [Course]
+}
