@@ -1,11 +1,14 @@
 package ix.ibm.waddemo.service;
 
+import ix.ibm.waddemo.pojo.Course;
 import ix.ibm.waddemo.pojo.Professor;
 import ix.ibm.waddemo.repository.ProfessorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -27,6 +30,13 @@ public class ProfessorService {
 
     public Professor create(Professor professor) {
         return professorRepository.save(professor);
+    }
+
+    public List<Professor> findAllProfessorsForCourse(Course course)
+    {
+        List<Professor> result = new ArrayList<>();
+        result.addAll(course.getProfessors());
+        return result;
     }
 
     public Professor update(Professor professor, Long id) {
