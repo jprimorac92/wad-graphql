@@ -12,7 +12,7 @@ import java.util.Set;
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @EqualsAndHashCode(exclude = "courses")
-public class Student {
+public class Student implements Human{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
