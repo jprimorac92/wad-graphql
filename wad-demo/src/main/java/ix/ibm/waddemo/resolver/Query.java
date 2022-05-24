@@ -2,11 +2,9 @@ package ix.ibm.waddemo.resolver;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import ix.ibm.waddemo.pojo.Course;
-import ix.ibm.waddemo.pojo.Human;
+import ix.ibm.waddemo.pojo.WorkshopParticipant;
 import ix.ibm.waddemo.pojo.Professor;
 import ix.ibm.waddemo.pojo.Student;
 import ix.ibm.waddemo.service.CourseService;
@@ -28,15 +26,6 @@ public class Query implements GraphQLQueryResolver
         this.studentService=studentService;
     }
 
-    public List<Human> allHumans()
-    {
-        List list1 = professorService.findAll();
-        List list2 = studentService.findAll();
-
-        list1.addAll(list2);
-        return list1;
-    }
-
     public List<Course> allCourses()
     {
         return courseService.findAll();
@@ -54,11 +43,20 @@ public class Query implements GraphQLQueryResolver
 
     public List<Object> allAll()
     {
-        List list1 = courseService.findAll();
+        List list1 = studentService.findAll();
         List list2 = professorService.findAll();
 
         list1.addAll(list2);
 
+        return list1;
+    }
+
+    public List<WorkshopParticipant> allWorkshopParticipants()
+    {
+        List list1 = professorService.findAll();
+        List list2 = studentService.findAll();
+
+        list1.addAll(list2);
         return list1;
     }
 }

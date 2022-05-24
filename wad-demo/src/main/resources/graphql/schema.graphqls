@@ -1,4 +1,4 @@
-interface Human{
+interface WorkshopParticipant{
     name: String
 }
 
@@ -9,25 +9,25 @@ type Course {
     professors: [Professor]
 }
 
-type Professor implements Human{
+type Professor implements WorkshopParticipant{
     id:ID!
     name:String
 }
 
-type Student implements Human{
+type Student implements WorkshopParticipant{
     id:ID!
     name:String
     level:Int
 }
 
-union All = Professor|Course
+union All = Professor|Student
 
 type Query {
     allCourses:[Course]
     allStudents:[Student]
     allProfessors:[Professor]
     allAll: [All]
-    allHumans: [Human]
+    allWorkshopParticipants: [WorkshopParticipant]
 }
 
 input CreateCourseInput{
