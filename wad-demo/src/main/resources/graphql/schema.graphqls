@@ -30,6 +30,24 @@ type Query {
     allHumans: [Human]
 }
 
+input CreateCourseInput{
+    title: String
+    description: String
+}
+
+input UpdateCourseInput{
+    id: ID!
+    title: String
+    description: String
+}
+
+type Mutation {
+    createCourse(input: CreateCourseInput): Course
+    updateCourse(input: UpdateCourseInput): Course
+    deleteCourse(id: ID!) : Boolean
+}
+
 schema{
     query: Query
+    mutation: Mutation
 }
