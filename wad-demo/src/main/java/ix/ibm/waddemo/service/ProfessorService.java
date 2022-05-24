@@ -2,6 +2,8 @@ package ix.ibm.waddemo.service;
 
 import ix.ibm.waddemo.pojo.Course;
 import ix.ibm.waddemo.pojo.Professor;
+import ix.ibm.waddemo.pojo.ProfessorCourse;
+import ix.ibm.waddemo.repository.ProfessorCourseRepository;
 import ix.ibm.waddemo.repository.ProfessorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,14 +12,19 @@ import javax.persistence.EntityNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ProfessorService {
     private final ProfessorRepository professorRepository;
+    private final ProfessorCourseRepository professorCourseRepository;
+
 
     @Autowired
-    public ProfessorService(ProfessorRepository professorRepository) {
+    public ProfessorService(ProfessorRepository professorRepository, ProfessorCourseRepository professorCourseRepository) {
         this.professorRepository = professorRepository;
+        this.professorCourseRepository = professorCourseRepository;
     }
 
     public List<Professor> findAll() {
@@ -34,9 +41,13 @@ public class ProfessorService {
 
     public List<Professor> findAllProfessorsForCourse(Course course)
     {
-        List<Professor> result = new ArrayList<>();
-        result.addAll(course.getProfessors());
-        return result;
+        final List<ProfessorCourse> professorCourses = professorCourseRepository.findAllByCourseId(course.getId());
+
+        return professorCourses.stream()
+            .map(e -> professorRepository.findById(e.getProfessorId()))
+            .filter(Optional::isPresent)
+            .map(Optional::get)
+            .collect(Collectors.toList());
     }
 
     public Professor update(Professor professor, Long id) {

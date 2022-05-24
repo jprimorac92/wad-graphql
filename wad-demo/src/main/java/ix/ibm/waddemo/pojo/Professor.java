@@ -1,6 +1,7 @@
 package ix.ibm.waddemo.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import javax.transaction.Transactional;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -18,10 +19,4 @@ public class Professor implements Human{
     private Long id;
 
     private String name;
-
-    @ManyToMany(mappedBy = "professors")
-    @JsonIgnoreProperties("professors")
-    private Set<Course> courses = new HashSet<>();
-
-
 }

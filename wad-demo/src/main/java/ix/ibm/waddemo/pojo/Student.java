@@ -19,9 +19,4 @@ public class Student implements Human{
 
     private String name;
     private int level;
-
-    @ManyToMany(mappedBy = "professors")
-    @JsonIgnoreProperties("students")
-    private Set<Course> courses = new HashSet<>();
-
 }
