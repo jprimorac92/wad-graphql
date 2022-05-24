@@ -34,7 +34,6 @@ public class WadDemoApplication {
         return SchemaParser
                 .newParser()
                 .file("graphql/schema.graphqls")
-                // .dictionary()
                 .resolvers(
                         new Query(courseService, professorService, studentService),
                         new CourseResolver(professorService),
