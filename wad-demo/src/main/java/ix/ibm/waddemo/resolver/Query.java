@@ -26,6 +26,7 @@ public class Query implements GraphQLQueryResolver
         this.studentService=studentService;
     }
 
+    /*
     public List<Course> allCourses()
     {
         return courseService.findAll();
@@ -36,11 +37,14 @@ public class Query implements GraphQLQueryResolver
         return studentService.findAll();
     }
 
+
     public List<Professor> allProfessors()
     {
         return professorService.findAll();
     }
+*/
 
+    /* UNION
     public List<Object> allAll()
     {
         List list1 = studentService.findAll();
@@ -51,6 +55,9 @@ public class Query implements GraphQLQueryResolver
         return list1;
     }
 
+     */
+
+    /* INTERFACE
     public List<WorkshopParticipant> allWorkshopParticipants()
     {
         List list1 = professorService.findAll();
@@ -59,4 +66,5 @@ public class Query implements GraphQLQueryResolver
         list1.addAll(list2);
         return list1;
     }
+     */
 }

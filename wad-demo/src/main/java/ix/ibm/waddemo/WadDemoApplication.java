@@ -30,6 +30,11 @@ public class WadDemoApplication {
         SpringApplication.run(WadDemoApplication.class, args);
     }
 
+    @Bean
+    public ServletRegistrationBean graphQLServlet() {
+        return new ServletRegistrationBean(SimpleGraphQLHttpServlet.newBuilder(buildSchema(courseService, professorService, studentService)).build(), "/graphql");
+    }
+
     private static GraphQLSchema buildSchema(CourseService courseService, ProfessorService professorService, StudentService studentService) {
         return SchemaParser
                 .newParser()
@@ -41,10 +46,4 @@ public class WadDemoApplication {
                 .build()
                 .makeExecutableSchema();
     }
-
-    @Bean
-    public ServletRegistrationBean graphQLServlet() {
-        return new ServletRegistrationBean(SimpleGraphQLHttpServlet.newBuilder(buildSchema(courseService, professorService, studentService)).build(), "/graphql");
-    }
-
 }
