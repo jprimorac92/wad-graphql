@@ -42,8 +42,10 @@ input UpdateCourseInput{
 }
 
 type Mutation {
-    createCourse(input: CreateCourseInput): Course
-    updateCourse(input: UpdateCourseInput): Course
+    createCourse(title: String, description: String): Course
+    updateCourse(id: ID!, title: String, description: String): Course
+    createCourseByInput(input: CreateCourseInput): Course
+    updateCourseByInput(input: UpdateCourseInput): Course
     deleteCourse(id: ID!) : Boolean
 }
 
