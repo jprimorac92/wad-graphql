@@ -35,7 +35,9 @@ input CreateCourseInput{
     description: String
 }
 
+#Input type for updating courses
 input UpdateCourseInput{
+    #ID of existing course
     id: ID!
     title: String
     description: String
