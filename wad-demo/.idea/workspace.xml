@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0758bf61-8c67-412f-9feb-29fdd33f107d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/WadDemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/controller/CourseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/controller/ProfessorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/controller/StudentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/pojo/Course.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/pojo/CreateCourseInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/pojo/Human.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/pojo/Professor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/pojo/ProfessorInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/pojo/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/pojo/StudentInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/pojo/UpdateCourseInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/repository/CourseRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/repository/ProfessorRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/repository/StudentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/resolver/CourseResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/resolver/Mutation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/resolver/Query.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/service/CourseService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/service/ProfessorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/service/StudentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ix/ibm/waddemo/servlet/GraphQLEndpoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/graphql/schema.graphqls" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="mutations" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="29IyAsP1VfLR8upEmPnB3iwrwZn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15625",
+    "project.structure.side.proportion": "0.3954023",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "d3a6f33d942ef5c2e83ebee2adcfee3f"
+  }
+}]]></component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RunManager">
+    <configuration name="WadDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="wad-demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ix.ibm.waddemo.WadDemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0758bf61-8c67-412f-9feb-29fdd33f107d" name="Changes" comment="" />
+      <created>1652814754071</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652814754071</updated>
+      <workItem from="1652814756196" duration="10879000" />
+      <workItem from="1652904246249" duration="8737000" />
+      <workItem from="1652977093657" duration="1007000" />
+      <workItem from="1653031606925" duration="129000" />
+      <workItem from="1653031837242" duration="410000" />
+      <workItem from="1653032257905" duration="899000" />
+      <workItem from="1653334522584" duration="6931000" />
+      <workItem from="1653376659095" duration="679000" />
+      <workItem from="1653482947985" duration="10197000" />
+      <workItem from="1653858727834" duration="1360000" />
+    </task>
+    <task id="LOCAL-00001" summary="Setup wad-demo project with Spring initializer.">
+      <created>1652815155628</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652815155628</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Removed dummy test class">
+      <created>1652825156073</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652825156073</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added pojos and repositories. And a test controller.">
+      <created>1652825214634</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652825214634</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixed recursive relations in json response">
+      <created>1652826613485</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652826613485</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add controllers and services">
+      <created>1652909046668</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652909046668</updated>
+    </task>
+    <task id="LOCAL-00006" summary="This version of application has working graphql">
+      <created>1653032872306</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1653032872306</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added mutations for course over input type">
+      <created>1653377256663</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653377256663</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added mutations for course over string values">
+      <created>1653558542681</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1653558542681</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add comments to schema.graphqls">
+      <created>1653561550403</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1653561550403</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Setup wad-demo project with Spring initializer." />
+    <MESSAGE value="Removed dummy test class" />
+    <MESSAGE value="Added pojos and repositories. And a test controller." />
+    <MESSAGE value="fixed recursive relations in json response" />
+    <MESSAGE value="add controllers and services" />
+    <MESSAGE value="This version of application has working graphql" />
+    <MESSAGE value="Added mutations for course over input type" />
+    <MESSAGE value="Added mutations for course over string values" />
+    <MESSAGE value="Add comments to schema.graphqls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add comments to schema.graphqls" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+</project>
