@@ -9,6 +9,7 @@ import ix.ibm.waddemo.pojo.UpdateCourseInput;
 import ix.ibm.waddemo.service.CourseService;
 import javax.annotation.Resource;
 
+@Component
 public class Mutation implements GraphQLMutationResolver
 {
     private final CourseService courseService;
