@@ -8,21 +8,27 @@ import ix.ibm.waddemo.pojo.WorkshopParticipant;
 import ix.ibm.waddemo.service.CourseService;
 import ix.ibm.waddemo.service.ProfessorService;
 import ix.ibm.waddemo.service.StudentService;
+import javax.annotation.Resource;
 
 import java.util.List;
+import org.springframework.stereotype.Component;
 
-public class Query implements GraphQLQueryResolver {
+@Component
+public class Query implements GraphQLQueryResolver
+{
     private final CourseService courseService;
 
     private final StudentService studentService;
 
     private final ProfessorService professorService;
 
+
     public Query(CourseService courseService, ProfessorService professorService, StudentService studentService) {
         this.courseService = courseService;
         this.professorService = professorService;
         this.studentService = studentService;
     }
+
 
     public List<Course> allCourses() {
         return courseService.findAll();

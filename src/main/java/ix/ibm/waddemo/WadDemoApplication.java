@@ -6,6 +6,7 @@ import graphql.servlet.SimpleGraphQLHttpServlet;
 import ix.ibm.waddemo.resolver.CourseResolver;
 import ix.ibm.waddemo.resolver.Mutation;
 import ix.ibm.waddemo.resolver.Query;
+import ix.ibm.waddemo.resolver.Subscription;
 import ix.ibm.waddemo.service.CourseService;
 import ix.ibm.waddemo.service.ProfessorService;
 import ix.ibm.waddemo.service.StudentService;
@@ -30,6 +31,12 @@ public class WadDemoApplication {
         SpringApplication.run(WadDemoApplication.class, args);
     }
 
+
+    @Bean
+    public ServletRegistrationBean graphQLServlet() {
+        return new ServletRegistrationBean(SimpleGraphQLHttpServlet.newBuilder(buildSchema(courseService, professorService, studentService)).build(), "/graphql");
+    }
+
     private static GraphQLSchema buildSchema(CourseService courseService, ProfessorService professorService, StudentService studentService) {
         return SchemaParser
                 .newParser()
@@ -37,14 +44,10 @@ public class WadDemoApplication {
                 .resolvers(
                         new Query(courseService, professorService, studentService),
                         new CourseResolver(professorService),
-                        new Mutation(courseService))
+                        new Mutation(courseService),
+                        new Subscription())
                 .build()
                 .makeExecutableSchema();
-    }
-
-    @Bean
-    public ServletRegistrationBean graphQLServlet() {
-        return new ServletRegistrationBean(SimpleGraphQLHttpServlet.newBuilder(buildSchema(courseService, professorService, studentService)).build(), "/graphql");
     }
 
 }
