@@ -54,7 +54,13 @@ type Mutation {
     deleteCourse(id: ID!) : Boolean
 }
 
+
+type Subscription {
+    studentLevel(studentId : Int): Student
+}
+
 schema{
     query: Query
     mutation: Mutation
+    subscription: Subscription
 }
