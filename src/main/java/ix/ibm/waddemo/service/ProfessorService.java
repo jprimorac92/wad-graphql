@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -39,15 +37,14 @@ public class ProfessorService {
         return professorRepository.save(professor);
     }
 
-    public List<Professor> findAllProfessorsForCourse(Course course)
-    {
+    public List<Professor> findAllProfessorsForCourse(Course course) {
         final List<ProfessorCourse> professorCourses = professorCourseRepository.findAllByCourseId(course.getId());
 
         return professorCourses.stream()
-            .map(e -> professorRepository.findById(e.getProfessorId()))
-            .filter(Optional::isPresent)
-            .map(Optional::get)
-            .collect(Collectors.toList());
+                .map(e -> professorRepository.findById(e.getProfessorId()))
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .collect(Collectors.toList());
     }
 
     public Professor update(Professor professor, Long id) {

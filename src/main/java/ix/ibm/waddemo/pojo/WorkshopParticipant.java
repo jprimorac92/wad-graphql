@@ -1,6 +1,5 @@
 package ix.ibm.waddemo.pojo;
 
-public interface WorkshopParticipant
-{
+public interface WorkshopParticipant {
     String getName();
 }

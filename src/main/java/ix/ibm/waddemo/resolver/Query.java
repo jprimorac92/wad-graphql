@@ -1,48 +1,42 @@
 package ix.ibm.waddemo.resolver;
 
-import java.util.List;
-
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import ix.ibm.waddemo.pojo.Course;
-import ix.ibm.waddemo.pojo.WorkshopParticipant;
 import ix.ibm.waddemo.pojo.Professor;
 import ix.ibm.waddemo.pojo.Student;
+import ix.ibm.waddemo.pojo.WorkshopParticipant;
 import ix.ibm.waddemo.service.CourseService;
 import ix.ibm.waddemo.service.ProfessorService;
 import ix.ibm.waddemo.service.StudentService;
 
-public class Query implements GraphQLQueryResolver
-{
+import java.util.List;
+
+public class Query implements GraphQLQueryResolver {
     private final CourseService courseService;
 
     private final StudentService studentService;
 
     private final ProfessorService professorService;
 
-    public Query(CourseService courseService, ProfessorService professorService, StudentService studentService)
-    {
-        this.courseService=courseService;
-        this.professorService=professorService;
-        this.studentService=studentService;
+    public Query(CourseService courseService, ProfessorService professorService, StudentService studentService) {
+        this.courseService = courseService;
+        this.professorService = professorService;
+        this.studentService = studentService;
     }
 
-    public List<Course> allCourses()
-    {
+    public List<Course> allCourses() {
         return courseService.findAll();
     }
 
-    public List<Student> allStudents()
-    {
+    public List<Student> allStudents() {
         return studentService.findAll();
     }
 
-    public List<Professor> allProfessors()
-    {
+    public List<Professor> allProfessors() {
         return professorService.findAll();
     }
 
-    public List<Object> allAll()
-    {
+    public List<Object> allAll() {
         List list1 = studentService.findAll();
         List list2 = professorService.findAll();
 
@@ -51,8 +45,7 @@ public class Query implements GraphQLQueryResolver
         return list1;
     }
 
-    public List<WorkshopParticipant> allWorkshopParticipants()
-    {
+    public List<WorkshopParticipant> allWorkshopParticipants() {
         List list1 = professorService.findAll();
         List list2 = studentService.findAll();
 
