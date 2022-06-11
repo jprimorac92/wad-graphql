@@ -9,7 +9,6 @@ import javax.annotation.Resource;
 import java.util.List;
 import org.springframework.stereotype.Component;
 
-@Component
 public class CourseResolver implements GraphQLResolver<Course>
 {
     private final ProfessorService professorService;
