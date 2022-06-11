@@ -13,7 +13,23 @@ public class Mutation implements GraphQLMutationResolver {
         this.courseService = courseService;
     }
 
-    public Course createCourse(CreateCourseInput input) {
+    public Course createCourse(String title, String description) {
+        Course course = new Course();
+        course.setTitle(title);
+        course.setDescription(description);
+
+        return courseService.create(course);
+    }
+
+    public Course updateCourse(long id, String title, String description) {
+        Course course = new Course();
+        course.setTitle(title);
+        course.setDescription(description);
+
+        return courseService.update(course, id);
+    }
+
+    public Course createCourseByInput(CreateCourseInput input) {
         Course course = new Course();
         course.setTitle(input.getTitle());
         course.setDescription(input.getDescription());
@@ -21,7 +37,7 @@ public class Mutation implements GraphQLMutationResolver {
         return courseService.create(course);
     }
 
-    public Course updateCourse(CreateCourseInput input) {
+    public Course updateCourseByInput(CreateCourseInput input) {
         Course course = new Course();
         course.setTitle(input.getTitle());
         course.setDescription(input.getDescription());
