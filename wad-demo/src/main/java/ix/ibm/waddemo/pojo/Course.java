@@ -1,6 +1,7 @@
 package ix.ibm.waddemo.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import javax.transaction.Transactional;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -20,23 +21,4 @@ public class Course {
 
     private String title;
     private String description;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "professor_course",
-            joinColumns = {@JoinColumn(name = "professorId")},
-            inverseJoinColumns = {@JoinColumn(name = "courseId")}
-    )
-    @JsonIgnoreProperties("courses")
-    Set<Professor> professors = new HashSet<>();
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "student_course",
-            joinColumns = {@JoinColumn(name = "studentId")},
-            inverseJoinColumns = {@JoinColumn(name = "couserId")}
-    )
-    @JsonIgnoreProperties("courses")
-    Set<Student> students = new HashSet<>();
-
 }

@@ -26,13 +26,9 @@ insert into STUDENT (name, level)
 values ('C-3PO', 2);
 
 insert into professor_course
-values (1, 1);
+values (1, 1, 1);
 insert into professor_course
-values (1, 2);
+values (2, 1, 2);
 insert into professor_course
-values (2, 3);
+values (3, 2, 3);
 
-insert into student_course
-values (1, 1);
-insert into student_course
-values (1, 2);

@@ -5,23 +5,17 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @EqualsAndHashCode(exclude = "courses")
-public class Student implements Human{
+public class Student implements WorkshopParticipant
+{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
     private int level;
-
-    @ManyToMany(mappedBy = "professors")
-    @JsonIgnoreProperties("students")
-    private Set<Course> courses = new HashSet<>();
-
 }
