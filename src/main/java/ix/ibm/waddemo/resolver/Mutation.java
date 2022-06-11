@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import ix.ibm.waddemo.pojo.Course;
 import ix.ibm.waddemo.pojo.CreateCourseInput;
+import ix.ibm.waddemo.pojo.UpdateCourseInput;
 import ix.ibm.waddemo.service.CourseService;
 import javax.annotation.Resource;
 
@@ -41,12 +42,8 @@ public class Mutation implements GraphQLMutationResolver
         return courseService.create(course);
     }
 
-    public Course updateCourseByInput(CreateCourseInput input) {
-        Course course = new Course();
-        course.setTitle(input.getTitle());
-        course.setDescription(input.getDescription());
-
-        return courseService.update(course, input.getId());
+    public Course updateCourseByInput(UpdateCourseInput input) {
+        return courseService.update(input);
     }
 
     public Boolean deleteCourse(Long id) {

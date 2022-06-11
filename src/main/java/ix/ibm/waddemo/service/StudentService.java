@@ -1,21 +1,28 @@
 package ix.ibm.waddemo.service;
 
+import ix.ibm.waddemo.pojo.Course;
 import ix.ibm.waddemo.pojo.Student;
+import ix.ibm.waddemo.pojo.StudentCourse;
+import ix.ibm.waddemo.repository.StudentCourseRepository;
 import ix.ibm.waddemo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class StudentService {
 
     private final StudentRepository studentRepository;
+    private final StudentCourseRepository studentCourseRepository;
 
     @Autowired
-    public StudentService(StudentRepository studentRepository) {
+    public StudentService(StudentRepository studentRepository, StudentCourseRepository studentCourseRepository) {
         this.studentRepository = studentRepository;
+        this.studentCourseRepository = studentCourseRepository;
     }
 
     public List<Student> findAll() {
@@ -24,6 +31,16 @@ public class StudentService {
 
     public Student findById(Long id) {
         return studentRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+    }
+
+    public List<Student> findAllStudentsForCourse(Course course) {
+        final List<StudentCourse> studentCourses = studentCourseRepository.findAllByCourseId(course.getId());
+
+        return studentCourses.stream()
+                .map(e -> studentRepository.findById(e.getStudentId()))
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .collect(Collectors.toList());
     }
 
     public Student create(Student student) {

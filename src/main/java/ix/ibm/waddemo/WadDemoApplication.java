@@ -31,23 +31,22 @@ public class WadDemoApplication {
         SpringApplication.run(WadDemoApplication.class, args);
     }
 
-
-    @Bean
-    public ServletRegistrationBean graphQLServlet() {
-        return new ServletRegistrationBean(SimpleGraphQLHttpServlet.newBuilder(buildSchema(courseService, professorService, studentService)).build(), "/graphql");
-    }
-
     private static GraphQLSchema buildSchema(CourseService courseService, ProfessorService professorService, StudentService studentService) {
         return SchemaParser
                 .newParser()
                 .file("graphql/schema.graphqls")
                 .resolvers(
                         new Query(courseService, professorService, studentService),
-                        new CourseResolver(professorService),
+                        new CourseResolver(professorService, studentService),
                         new Mutation(courseService),
                         new Subscription())
                 .build()
                 .makeExecutableSchema();
+    }
+
+    @Bean
+    public ServletRegistrationBean graphQLServlet() {
+        return new ServletRegistrationBean(SimpleGraphQLHttpServlet.newBuilder(buildSchema(courseService, professorService, studentService)).build(), "/graphql");
     }
 
 }
