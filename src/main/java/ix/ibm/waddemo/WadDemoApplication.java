@@ -36,7 +36,7 @@ public class WadDemoApplication {
                 .file("graphql/schema.graphqls")
                 .resolvers(
                         new Query(courseService, professorService, studentService),
-                        new CourseResolver(professorService),
+                        new CourseResolver(professorService, studentService),
                         new Mutation(courseService))
                 .build()
                 .makeExecutableSchema();
