@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 import java.util.List;
 import org.springframework.stereotype.Component;
 
+@Component
 public class Query implements GraphQLQueryResolver
 {
     private final CourseService courseService;
