@@ -54,7 +54,18 @@ type Mutation {
     deleteCourse(id: ID!) : Boolean
 }
 
+type CourseGrade {
+    course:Course
+    student:Student
+    grade:Int
+}
+
+type Subscription {
+    getGrades(courseId: ID): CourseGrade
+}
+
 schema{
     query: Query
     mutation: Mutation
+    subscription: Subscription
 }
