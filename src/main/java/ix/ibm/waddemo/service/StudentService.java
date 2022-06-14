@@ -33,6 +33,14 @@ public class StudentService {
         return studentRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
+    public Student updateStudent(Long id)
+    {
+        final Student student = findById(id);
+        student.setLevel((int)Math.floor(Math.random()*10));
+
+        return student;
+    }
+
     public List<Student> findAllStudentsForCourse(Course course) {
         final List<StudentCourse> studentCourses = studentCourseRepository.findAllByCourseId(course.getId());
 

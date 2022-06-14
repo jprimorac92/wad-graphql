@@ -24,13 +24,12 @@ public class Subscription implements GraphQLSubscriptionResolver
     {
         Observable<Student> observable = Observable.create(e -> {
             ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
-                scheduledExecutorService.scheduleAtFixedRate(()->
-                    {
-                        final Student student = studentService.findById(studentId);
-                        student.setLevel((int)Math.floor(Math.random()*5));
-                        e.onNext(student);
-                    }
-                    ,0,2, TimeUnit.SECONDS);
+                scheduledExecutorService.scheduleAtFixedRate(
+                    ()->
+                        e.onNext(studentService.updateStudent(studentId))
+                    ,0,
+                    2,
+                    TimeUnit.SECONDS);
         });
 
         ConnectableObservable connect = observable.share().publish();
