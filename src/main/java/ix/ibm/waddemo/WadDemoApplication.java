@@ -36,10 +36,11 @@ public class WadDemoApplication {
                 .newParser()
                 .file("graphql/schema.graphqls")
                 .resolvers(
-                        new Query(courseService, professorService, studentService),
-                        new CourseResolver(professorService, studentService),
-                        new Mutation(courseService),
-                        new Subscription())
+                        new Query(courseService, professorService, studentService)
+                        //new CourseResolver(professorService, studentService),
+                        //new Mutation(courseService),
+                        //new Subscription()
+                )
                 .build()
                 .makeExecutableSchema();
     }

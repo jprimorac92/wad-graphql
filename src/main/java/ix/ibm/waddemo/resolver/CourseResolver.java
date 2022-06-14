@@ -10,7 +10,6 @@ import ix.ibm.waddemo.service.StudentService;
 import java.util.List;
 import org.springframework.stereotype.Component;
 
-@Component
 public class CourseResolver implements GraphQLResolver<Course> {
     private final ProfessorService professorService;
     private final StudentService studentService;

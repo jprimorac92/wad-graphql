@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @EqualsAndHashCode(exclude = "courses")
-public class Student implements WorkshopParticipant {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
