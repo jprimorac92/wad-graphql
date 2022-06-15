@@ -44,7 +44,9 @@ public class CourseService {
         return courseRepository.findById(id)
                 .map(existingCourse -> {
                     existingCourse.setTitle(course.getTitle());
-                    existingCourse.setDescription(course.getDescription());
+                    if (course.getDescription() != null) {
+                        existingCourse.setDescription(course.getDescription());
+                    }
                     return courseRepository.save(existingCourse);
                 })
                 .orElseThrow(EntityNotFoundException::new);
@@ -54,7 +56,9 @@ public class CourseService {
         return courseRepository.findById(courseInput.getId())
                 .map(existingCourse -> {
                     existingCourse.setTitle(courseInput.getTitle());
-                    existingCourse.setDescription(courseInput.getDescription());
+                    if (courseInput.getDescription() != null) {
+                        existingCourse.setDescription(courseInput.getDescription());
+                    }
                     updateProfessorCourses(courseInput);
                     updateStudentCourses(courseInput);
                     return courseRepository.save(existingCourse);
